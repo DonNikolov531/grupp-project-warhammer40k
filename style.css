@@ -1,0 +1,20 @@
+/* FILEPATH: /C:/Users/sami_/OneDrive/Skrivbord/temp/grupp-project-warhammer40k/style.css */
+.card {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#error-container {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
