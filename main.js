@@ -4,7 +4,10 @@ fetch('https://localhost:7011/War')
     .then(response => response.json())
     .then(data => displayData(data))
 
-// display data in cards
+
+document.getElementById('cards-container').innerHTML = '';
+
+// displaya data in cards
 function displayData(data) {
     console.log(data);
     // foreacha data och skapa cards
@@ -24,15 +27,15 @@ function displayData(data) {
 
 function addData(event) {
     event.preventDefault();
-    const title = document.getElementById('name').value;
-    const description = document.getElementById('race').value;
+    const name = document.getElementById('name').value;
+    const race = document.getElementById('race').value;
 
     const response = fetch('https://localhost:7011/War', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ title, description })
+        body: JSON.stringify({ name, race })
     });
     if (response.ok) {
         // Data addat, fetcha upddaterad data
