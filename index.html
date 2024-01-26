@@ -1,28 +1,50 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Warhammer 40k</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div id="user-container"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warhammer 40k</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- <style>
+      body {
+        background-image: url("https://e1.pxfuel.com/desktop-wallpaper/982/23/desktop-wallpaper-warhammer-phone-warhammer-fantasy-cellphone.jpg");
+      }
+    </style> -->
+    <div id="error-container"></div>
 
-        <input type="text" id="search-input" placeholder="Search">
+    <div id="user-container"></div>
 
-        <div id="cards-container"></div>
+    <input type="text" id="search-input" placeholder="Search..." />
+    <button onclick="searchData()">Search</button>
 
-        <form onsubmit="addData(event)">
-            <input type="text" id="name" placeholder="name">
-            <input type="text" id="race" placeholder="race">
-            <button type="add">Add Data</button>
-        </form>
+    <div id="cards-container"></div>
 
-        <script src="main.js">
-            
-        </script>
-    </body>
+    <div id="update-form-container">
+      <form onsubmit="updateData(event)">
+        <h2>Update data:</p>
+        <input type="hidden" id="update-id" value="" />
+        <input type="text" id="update-name" placeholder="new name" />
+        <input type="text" id="update-race" placeholder="new race" />
+        <button type="submit">Update Data</button>
+      </form>
+    </div>
+
+    <form onsubmit="addData(event)">
+      <h2>Add a new character:</h2>
+      <input type="text" id="name" placeholder="name" />
+      <input type="text" id="race" placeholder="race" />
+      <button type="submit">Add Data</button>
+    </form>
+
+    <div id="delete-section">
+        <h2>Delete an character:</h2>
+      <label for="delete-id">ID to Delete:</label>
+      <input type="text" id="delete-id" placeholder="Enter ID" />
+      <button type="button" onclick="onDeleteButtonClick()">Delete Data</button>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
 </html>
